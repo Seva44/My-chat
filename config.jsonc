@@ -1,0 +1,96 @@
+{
+    "height": 29, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": [
+	"custom/div-o",
+        "hyprland/workspaces",
+	"custom/div-c",
+	"hyprland/language",
+	"custom/div-s",
+	"hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "memory",
+	"custom/div",
+	"pulseaudio",
+	"custom/div",
+        "tray",
+	"custom/div",
+        "custom/power",
+	"custom/swaync"
+    ],
+    "hyprland/window": {
+	"separate-outputs" : false,
+	"format" : "{title}"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+	"interval" : 1,
+        "format": "{:%H:%M:%S}",
+	"tooltip-format" : "{:%d/%m/%y}"
+    },
+    "memory": {
+        "format": "M{percentage}%",
+	"tooltip-format": "Mem {used:0.1f}/{total:0.1f}"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    }, 
+    "custom/swaync":{
+	"on-click": "swaync-client -op",
+	"format" : " ",
+	"tooltip" : false
+    },
+    "custom/power":{
+	"on-click": "wlogout",
+	"format" : "⏻ ",
+	"tooltip" : false
+    },
+    "custom/div":{
+	"format" : "|"
+    },
+    "custom/div-o":{
+	"format" : "|"
+    },
+    "custom/div-c":{
+	"format" : "|"
+    },
+    "custom/div-s":{
+	"format" : " "
+    },
+    "hyprland/language":{
+	 "format": "{}",
+	 "format-en": "en",
+	 "format-ru": "ru"
+
+    },
+    "hyprland/workspaces":{
+	 "format": "{id}",
+	 "active-only" : false,
+	 "hide-active" : false,
+	 "persistent-workspaces" : {
+		"*" : [1,2,3,4,5,6]
+	 }
+    },
+    "pulseaudio":{
+	"format" : "{icon} {volume}%",
+	"format-muted": "󰝟 ",
+	"format-icons": {
+		"default" : ["󰕿", "󰖀", "󰕾"]
+	},
+	"on-click-right": "pavucontrol-qt",
+	"on-click": "pactl set-sink-mute 0 toggle"
+    }
+}

@@ -1,0 +1,63 @@
+@import url("share/colors/main.css");
+
+* {
+   font-size: 14px;
+   font-family: "DejaVu Sans Mono";
+   min-height: 0;
+   margin: 0px;
+   padding: 0px;
+}
+window#waybar{
+  background-color: @background-color-main;
+}
+#tray{
+  padding: 0px 5px;
+}
+#tray menu{
+  border: 0px;
+  background-color: @background-color-secondary;
+  padding: 5px;
+}
+#pulseaudio,
+#custom-div,
+#custom-div-c,
+#custom-div-s,
+#language,
+#memory{
+  color: @foreground-color-main;
+}
+#window{
+  color: @foreground-color-secondary;
+}
+#custom-div-o{
+  color: @foreground-color-main;
+  margin-left: 2px;
+}
+#custom-swaync{
+  color: @foreground-color-main;
+  margin-right: 2px;
+}
+#custom-power{
+  color: @foreground-color-main;
+  margin-right: 2px;
+}
+#clock{
+  color: @foreground-color-main;
+  font-weight: bold;
+}
+#workspaces button{
+  color: @foreground-color-secondary;
+  border-radius: 0px;
+  border: 0px;
+}
+#workspaces button.active{
+  color: @foreground-color-main;
+  font-weight: bold;
+}
+#workspaces button.persistent{    
+  color: @foreground-color-main;
+}
+#workspaces button.empty{
+  color: @middle;
+}
+
